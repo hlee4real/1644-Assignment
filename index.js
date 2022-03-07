@@ -19,9 +19,6 @@ app.post('/insert', async (req, res) => {
     if (name.trim().length == 0) {
         res.render('insert', { nameError: "Please enter Name!" })
     }
-    else if (price <= 100){
-        res.render('insert', { nameError: null, priceError: "Price must be greater 100 $" })
-    }
     else if (price.trim().length == 0) {
         res.render('insert', { nameError: null, priceError: "Please enter Price!" })
     }
@@ -43,7 +40,6 @@ app.post('/insert', async (req, res) => {
         res.render('insert', { products: result, urlError: 'Please enter Image URL!' })
     }
     else {
-
         //build the object to be inserted
         const obj = { name: name, price: price, category: category, image: url }
         //call the function to insert into DB

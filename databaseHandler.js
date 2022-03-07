@@ -21,7 +21,7 @@ async function getAll(collectionName){
 async function insertToDB(obj,collectionName){
     const dbo = await getDatabase()
     const result = await dbo.collection(collectionName).insertOne(obj)
-    console.log("id san pham moi duoc insert la: ", result.insertedId.toHexString());
+    console.log("id of the new toy that will be inserted: ", result.insertedId.toHexString());
 }
 async function deleteObject(id,collectionName){
     const dbo = await getDatabase()
